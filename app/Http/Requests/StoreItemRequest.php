@@ -13,7 +13,7 @@ class StoreItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:10',
+            'memo' => 'required|max:30',
+            'price' => 'required|numeric',
         ];
     }
 }
